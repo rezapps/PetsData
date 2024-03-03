@@ -12,3 +12,4 @@ C:\Users\yo-re\Documents\prog\cs\basics\PetsData\obj\Debug\net9.0\refint\PetsDat
 C:\Users\yo-re\Documents\prog\cs\basics\PetsData\obj\Debug\net9.0\PetsData.pdb
 C:\Users\yo-re\Documents\prog\cs\basics\PetsData\obj\Debug\net9.0\PetsData.genruntimeconfig.cache
 C:\Users\yo-re\Documents\prog\cs\basics\PetsData\obj\Debug\net9.0\ref\PetsData.dll
+C:\Users\yo-re\Documents\prog\cs\basics\PetsData\obj\Debug\net9.0\PetsData.sourcelink.json
