@@ -1,9 +1,9 @@
-﻿namespace petsData
+﻿namespace PetsData
 {
     public class Program
     {
         // maximum number of pets
-        static readonly int maxPets = 6;
+        static readonly int maxPets = 8;
 
         static void Main()
         {
@@ -13,7 +13,7 @@
             AnimalManagement.InitializeAnimals(ourPets, maxPets);
 
             // Call the display menu method
-            appMenu app = new appMenu();
+            AppMenu app = new AppMenu();
             app.DisplayMenu(ourPets, maxPets);
         }
     }

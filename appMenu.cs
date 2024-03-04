@@ -1,16 +1,15 @@
-namespace petsData
+namespace PetsData
 {
-    public class appMenu
+    public class AppMenu
     {
-        public string? readResult;
-        public string menuOption = "";
+        private string? readResult;
+        private string _menuOption = "";
 
-
-        // display menu options
         public void DisplayMenu(List<Animal> ourAnimals, int maxPets)
         {
             do
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.Clear();
                 Console.WriteLine("Welcome to the Contoso PetFriends app. Your main menu options are:");
                 Console.WriteLine(" 1. List all of our current pet information");
@@ -23,31 +22,61 @@ namespace petsData
                 Console.WriteLine(" 8. Display all dogs with a specified characteristic");
                 Console.WriteLine();
                 Console.WriteLine("Enter your selection number (or type Exit to exit the program)");
-
-                readResult = Console.ReadLine();
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.White;
+                    readResult = Console.ReadLine() ?? "";
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                 if (readResult != null)
                 {
-                    menuOption = readResult.ToLower();
+                    _menuOption = readResult.ToLower();
                 }
 
-
-                switch (menuOption)
+                switch (_menuOption)
                 {
                     case "1":
-                        // option 1 is display all pets
-                        menuFunctions.listAnimals(ourAnimals, maxPets);
+                        Console.ResetColor();
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        menuFunctions.ListAnimals(ourAnimals, maxPets);
+                        Console.ResetColor();
                         break;
-                    case "exit":
-                        menuFunctions.ExitApp();
+                    case "2":
+                        Console.ResetColor();
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Press the Enter key to continue.");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        readResult = Console.ReadLine() ?? "";
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        menuFunctions.AddNewPet(ourAnimals, maxPets, readResult ?? "");
+                        Console.ResetColor();
                         break;
-                    
+                    case "3":
+                    case "4":
+                    case "5":
+                    case "6":
+                    case "7":
+                    case "8":
+                        Console.ResetColor();
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine("UNDER CONSTRUCTION - please check back next month to see progress.");
+                        Console.WriteLine("Press the Enter key to continue.");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        readResult = Console.ReadLine() ?? "";
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.ResetColor();
+                        break;
+                    default:
+                        Console.ResetColor();
+                        break;
                 }
+
                 Console.WriteLine("Press the Enter key to continue.");
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.White;
+                readResult = Console.ReadLine() ?? "";
+                Console.ResetColor();
 
-                // pause code execution
-                readResult = Console.ReadLine();
-
-            } while (menuOption != "exit");
+            } while (_menuOption != "exit");
+            Console.ResetColor();
         }
     }
 }

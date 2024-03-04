@@ -1,4 +1,4 @@
-namespace petsData
+namespace PetsData
 {
     public class Animal
     {
